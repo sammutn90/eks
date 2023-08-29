@@ -31,11 +31,15 @@ spec:
         paths:
           - path: /* # SSL Redirect Setting
             backend:
-              service.name: ssl-redirect
-              service.port.name: use-annotation            
+              service:
+                name: ssl-redirect
+                port:
+                  name: use-annotation            
           - path: /*
             backend:
-              service.name: eks-devops-nodeport-service
-              service.port.number: 80                                   
+              service:
+                name: eks-devops-nodeport-service
+                port: 
+                  number: 80                                   
 # Important Note-1: In path based routing order is very important, if we are going to use  "/*", try to use it at the end of all rules.         
 
